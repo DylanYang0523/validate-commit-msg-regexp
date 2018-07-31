@@ -1,0 +1,21 @@
+{
+  "projectName": "validate-commit-msg-regexp",
+  "projectOwner": "DylanYang0523",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "DylanYang0523",
+      "name": "Dylan Yang",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12027934?v=4",
+      "profile": "https://github.com/DylanYang0523",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.idea
+*.log
+*.iml
+*.DS_Store
+
+node_modules
+coverage
+nohup.out
+
+*.ignored.*
+*.ignored/
+*.ignored
+.opt-in
+.opt-out
+
+tmp
