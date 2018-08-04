@@ -338,17 +338,18 @@ describe('validate-commit-msg-regexp.js', function() {
       expect(writeFileSyncStub.called).to.equal(INVALID);
     });
 
-    it('should validate scope when allowed array is set regular expression', function() {
-      var msg = 'feat(RegExp): Add new feature';
+    it('should validate scope in regular expression mode', function() {
+      var msg = 'feat(InvalidRegExp): Add new feature';
 
       m.config.scope = {
         validate: true,
-        allowed: [/^Reg\w{3}$/]
+        allowed: ["^ValidRegExp\\w{6}$"],
+        regexpMode: true
       };
 
-      expect(m.validateMessage(msg)).to.equal(VALID);
-      expect(errors).to.deep.equal([]);
-      expect(logs).to.deep.equal([]);
+      expect(m.validateMessage(msg)).to.equal(INVALID);
+      expect(errors[0]).to.equal('INVALID COMMIT MSG: "InvalidRegExp" is not an allowed scope ! Valid scope are: ' + m.config.scope.allowed.join(', '));
+      expect(logs).to.deep.equal([msg]);
 
       m.config.scope = undefined;
     });
