@@ -6,7 +6,7 @@ var sinon = require('sinon');
 var m = require('./../lib/validateMessage');
 var format = require('util').format;
 
-describe('validate-commit-msg.js', function() {
+describe('validate-commit-msg-regexp.js', function() {
   var originalLog, originalError;
   var errors = [];
   var logs = [];
@@ -336,6 +336,21 @@ describe('validate-commit-msg.js', function() {
       var msg = 'chore(build): a something Z';
       m.validateMessage(msg, 'file');
       expect(writeFileSyncStub.called).to.equal(INVALID);
+    });
+
+    it('should validate scope when allowed array is set regular expression', function() {
+      var msg = 'feat(RegExp): Add new feature';
+
+      m.config.scope = {
+        validate: true,
+        allowed: [/^Reg\w{3}$/]
+      };
+
+      expect(m.validateMessage(msg)).to.equal(VALID);
+      expect(errors).to.deep.equal([]);
+      expect(logs).to.deep.equal([]);
+
+      m.config.scope = undefined;
     });
   });
 
