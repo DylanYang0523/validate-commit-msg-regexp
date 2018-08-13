@@ -14,6 +14,8 @@ More RegExp related options you can set for commit message.
 
 ## Installation
 
+#### npm
+
 This module is distributed via [npm](https://www.npmjs.com/) which is bundled with [node](https://nodejs.org/) and
 should be installed as one of your project's `devDependencies`:
 
@@ -21,7 +23,88 @@ should be installed as one of your project's `devDependencies`:
 npm install --save-dev validate-commit-msg-regxep
 ```
 
-## Usage
+Now, you can choose one setting option from below.
+
+#### #1 setting option
+
+You can specify options in `.vcmrc` file.
+It must be valid JSON file.
+
+```json
+{
+  "types": [
+    "feat", "fix", "docs", "style", "refactor",
+    "perf", "test", "build", "ci", "chore", "revert"
+  ],
+  "scope": {
+    "required": false,
+    "allowed": ["*"],
+    "validate": false,
+    "multiple": false,
+    "regexpMode": false,
+  },
+  "warnOnFail": false,
+  "maxSubjectLength": 100,
+  "subjectPattern": ".+",
+  "subjectPatternErrorMsg": "subject does not match subject pattern!",
+  "helpMessage": "",
+  "autoFix": false
+}
+```
+
+#### #2 setting option
+
+You can specify options in `package.json` file.
+It must be valid JSON file.
+
+```json
+{
+  "config": {
+    "validate-commit-msg": {
+      // ... your custom setting here
+    }
+  }
+}
+```
+
+## Recommend Using
+
+- [husky](https://www.npmjs.com/package/husky) ⇨ Git hooks made easy. ⭐⭐⭐⭐⭐
+
+```json
+// edit package.json
+...
+{
+  "scripts": {
+    "...": "...",
+    "commitmsg": "validate-commit-msg-regexp",
+    "...": "..."
+  }
+}
+...
+```
+- [commitizen](https://www.npmjs.com/package/commitizen) ⇨ Help you to create a regular commit msg. ⭐⭐⭐
+
+```json
+// edit package.json
+...
+{
+  "scripts": {
+    "...": "...",
+    "commit": "git-cz",
+    "...": "..."
+  }
+}
+...
+{
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
+...
+```
 
 [license-badge]: https://img.shields.io/npm/l/validate-commit-msg.svg?style=flat-square
 [license]: https://github.com/DylanYang0523/validate-commit-msg-regexp/blob/master/LICENSE
