@@ -123,15 +123,15 @@ spec, e.g. `"types": "conventional-commit-types"`.
 
 This object defines scope requirements for the commit message.
 
-* ***required*** ➡ A boolean to define whether a scope is required for all commit messages.
+* *required* ➡ a boolean to define whether a scope is required for all commit messages.
 
-* ***allowed*** ➡ An array of scopes that are allowed for your commit message. You may also define it as `"*"` which is the default to allow any scope names.
+* *allowed* ➡ an array of scopes that are allowed for your commit message. You may also define it as `"*"` which is the default to allow any scope names.
 
-* ***validate*** ➡ A boolean to define whether or not to validate the scope(s) provided.
+* *validate* ➡ a boolean to define whether or not to validate the scope(s) provided.
 
-* ***multiple*** ➡ A boolean to define whether or not to allow multiple scopes.
+* *multiple* ➡ a boolean to define whether or not to allow multiple scopes.
 
-* ***regexpMode*** ➡ A boolean to define whether or not to validate allowed array with regular expression.
+* *regexpMode* ➡ a boolean to define whether or not to validate allowed array with regular expression.
 
 #### warnOnFail 🦄
 
