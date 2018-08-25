@@ -11,7 +11,7 @@ notifications:
 node_js:
   - '8'
 before_script:
-  - npm prune
+  - yarn install
 script:
   - yarn run validate
 after_success:
