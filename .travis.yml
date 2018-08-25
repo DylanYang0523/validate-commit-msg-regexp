@@ -16,4 +16,4 @@ script:
   - yarn run validate
 after_success:
   - npm run report-coverage
-  - npm run semantic-release
+  - npm run travis-deploy-once "npm run semantic-release"
