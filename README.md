@@ -171,4 +171,4 @@ If this is set to `true`, type will be auto fixed to all lowercase, subject firs
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome 🎉🎉🎉
