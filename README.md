@@ -76,10 +76,14 @@ Set this validation mechanism to where ever you want it can collaborate with, li
 // edit package.json
 ...
 {
-  "scripts": {
-    "...": "...",
-    "commitmsg": "validate-commit-msg-regexp",
-    "...": "..."
+  "husky": {
+    ...
+    "hooks": {
+      "...": "...",
+      "commit-msg": "validate-commit-msg-regexp",
+      "...": "...",
+    }
+    ...
   }
 }
 ...
